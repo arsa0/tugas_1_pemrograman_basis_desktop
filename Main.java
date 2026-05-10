@@ -16,7 +16,7 @@ public class Main {
         // Menampilkan daftar menu
         cetakMenu();
 
-        // Proses pemesanan (4 kali input tanpa loop)
+        // Proses pemesanan
         inputSatuPesanan(0);
         inputSatuPesanan(1);
         inputSatuPesanan(2);
@@ -38,7 +38,7 @@ public class Main {
         daftarMenu[7] = new Menu("Kopi Tubruk", 7000, "minuman");
     }
 
-    // Method mencetak menu dikelompokkan per kategori (tanpa loop)
+    // Method mencetak menu dikelompokkan per kategori
     static void cetakMenu() {
         System.out.println("========== DAFTAR MENU ==========");
         System.out.println("--- MAKANAN ---");
@@ -64,7 +64,7 @@ public class Main {
         System.out.println("==================================\n");
     }
 
-    // Method untuk mencari indeks menu berdasarkan nama (tanpa loop, if berantai)
+    // Method untuk mencari indeks menu berdasarkan nama
     static int cariIndeksMenu(String nama) {
         if (daftarMenu[0] != null && daftarMenu[0].getNama().equalsIgnoreCase(nama))
             return 0;
@@ -126,7 +126,7 @@ public class Main {
 
     // Method menghitung total & mencetak struk (berisi banyak struktur keputusan)
     static void hitungDanCetakStruk() {
-        // Hitung subtotal secara manual (tanpa loop)
+        // Hitung subtotal secara manual
         int subtotal = 0;
         if (pesananIndex[0] != -1)
             subtotal += pesananQty[0] * daftarMenu[pesananIndex[0]].getHarga();
@@ -155,7 +155,7 @@ public class Main {
         }
 
         if (grossTotal > 50000) {
-            // Cek pesanan satu per satu apakah ada minuman (tanpa loop)
+            // Cek pesanan satu per satu apakah ada minuman
             if (pesananIndex[0] != -1 && daftarMenu[pesananIndex[0]].getKategori().equals("minuman")) {
                 System.out.print("Apakah Anda ingin menerapkan beli 1 gratis 1 untuk "
                         + daftarMenu[pesananIndex[0]].getNama() + "? (ya/tidak): ");
@@ -203,7 +203,7 @@ public class Main {
         System.out.println("             STRUK PEMBAYARAN        ");
         System.out.println("=====================================");
         System.out.println("Pesanan :");
-        // Tampilkan tiap item pesanan (tanpa loop)
+        // Tampilkan tiap item pesanan
         if (pesananIndex[0] != -1) {
             Menu m = daftarMenu[pesananIndex[0]];
             int hargaTotal = pesananQty[0] * m.getHarga();
